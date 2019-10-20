@@ -5250,7 +5250,7 @@ databaseChangeLog:
         - onFail: MARK_RAN
         - onUpdateSQL: RUN
         - tableExists:
-            tableName: databasechangelog
+            tableName: DATABASECHANGELOG
       changes:
         - sql:
             sql: >-
@@ -5258,7 +5258,7 @@ databaseChangeLog:
               SET archived = NOT archived
               WHERE EXISTS (
                 SELECT *
-                FROM databasechangelog dbcl
+                FROM DATABASECHANGELOG dbcl
                 WHERE dbcl.id = '84'
                   AND metric.updated_at < dbcl.dateexecuted
               )
